@@ -63,33 +63,8 @@ $("#addSearch").on("click", function(){
     topics.push(newSearch);
     createButtons(topics, ".searchButton", "#buttons");
     return false;
-})
+});
 
 
 
 
-
-    //    $.ajax({
-//       url: queryURL,
-//       method: "GET"
-//     }) 
-    
-//     .then(function(response) {
-//         console.log(queryURL);
-//         console.log(response);
-//         // storing the data from the AJAX request in the results variable
-//         var results = response.data;
-
-//         // Looping through each result item
-//         for (var i = 0; i < results.length; i++) {
-//           var topicsDiv = $("<div>");
-//           var p = $("<p>").text("Rating: " + results[i].rating);
-//           var topicsImage = $("<img>");
-//           topicsImage.attr("src", results[i].images.fixed_height.url);
-//           topicsDiv.append(p);
-//           topicsDiv.append(topicsImage);
-//         // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
-//           $("#gifs-appear-here").prepend(topicsDiv);
-//         }
-//       });
-//   });
