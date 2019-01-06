@@ -3,21 +3,21 @@ $(function(){
 //console.log("load page");
 })
 
-var topics = ["Fresh Prince","Michael Scott","Barney Stinson","Adam Sandler","Kevin James","jonah Hill","Eddy murphy","jerry seinfeld","Michael Kelso", "Jim Carrey"];
+var topics = ["Fresh Prince","Steve Carrell","Chris Tucker","ken Jeong","Martin Lawrence","Jonah Hill","Eddy murphy","Adam Sandler","Dave Chapell", "Jim Carrey"];
 
 function createButtons (topics, classToAdd, areaToAddTo){
-    $(areaToAddTo).empty(); //why do i need to empty areaToAddTo? 
+    $(areaToAddTo).empty(); 
     for (var i = 0; i < topics.length;i++){
         var a = $("<button>");
         a.addClass(classToAdd);
         a.attr("data-type",topics[i]);
-        a.text(topics[i]); //writes the name on the buttons
+        a.text(topics[i]); 
         $(areaToAddTo).append(a);
     }
 }
 
 $(document).on("click", ".searchButton", function(){
-    $("#searches").empty(); //empties the search-form 
+    $("#searches").empty(); 
     var type = $(this).data("type");
    // console.log(type);
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=XaAzD07hk1kwfKsoN2w7LErp50qOyG0e&limit=10&rating=R";
@@ -62,7 +62,8 @@ $("#addSearch").on("click", function(){
     var newSearch = $("input").eq(0).val();
     topics.push(newSearch);
     createButtons(topics, "searchButton", "#buttons");
-    return false;//why return false?
+    $("#search-input").val(" ");
+    return false;
     
 });
 
